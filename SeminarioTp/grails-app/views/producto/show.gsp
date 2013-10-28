@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list producto">
 			
+				<g:if test="${productoInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="producto.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${productoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productoInstance?.fechaVencimiento}">
+				<li class="fieldcontain">
+					<span id="fechaVencimiento-label" class="property-label"><g:message code="producto.fechaVencimiento.label" default="Fecha Vencimiento" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaVencimiento-label"><g:formatDate date="${productoInstance?.fechaVencimiento}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productoInstance?.tipo}">
+				<li class="fieldcontain">
+					<span id="tipo-label" class="property-label"><g:message code="producto.tipo.label" default="Tipo" /></span>
+					
+						<span class="property-value" aria-labelledby="tipo-label"><g:link controller="tipoProducto" action="show" id="${productoInstance?.tipo?.id}">${productoInstance?.tipo?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:productoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

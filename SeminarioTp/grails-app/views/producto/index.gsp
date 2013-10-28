@@ -24,11 +24,23 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="nombre" title="${message(code: 'producto.nombre.label', default: 'Nombre')}" />
+					
+						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'producto.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
+					
+						<th><g:message code="producto.tipo.label" default="Tipo" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${productoInstanceList}" status="i" var="productoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${productoInstance.id}">${fieldValue(bean: productoInstance, field: "nombre")}</g:link></td>
+					
+						<td><g:formatDate date="${productoInstance.fechaVencimiento}" /></td>
+					
+						<td>${fieldValue(bean: productoInstance, field: "tipo")}</td>
 					
 					</tr>
 				</g:each>
