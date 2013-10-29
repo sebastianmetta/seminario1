@@ -18,8 +18,10 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="appLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'Logo.jpg')}" alt="Campo Chico"/></a></div>
-		<div id="appLogo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'Logo.jpg')}" alt="Campo Chico"/></a></div>
+		<div id="appLogo" role="banner">
+			<a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'LogoTitulo.png')}" alt="Campo Chico"/></a>
+			<a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'Logo.jpg')}" alt="Campo Chico" align="right"/></a>
+		</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
