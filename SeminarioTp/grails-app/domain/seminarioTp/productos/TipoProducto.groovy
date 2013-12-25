@@ -1,4 +1,4 @@
-package seminariotp
+package seminarioTp.productos
 
 class TipoProducto {
 
@@ -6,5 +6,7 @@ class TipoProducto {
 	String descripcion
 	
     static constraints = {
+		nombre (blank:false) 
+		descripcion () 
     }
 }

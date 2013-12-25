@@ -6,17 +6,17 @@
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
-				border: .2em solid #fff;
+				border: .1em solid #000000;
 				margin: 2em 2em 1em;
-				padding: 1em;
+				padding: 1.2em;
 				width: 12em;
 				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
+				-moz-box-shadow: 0px 0px 1.25em #ffffff;
+				-webkit-box-shadow: 0px 0px 1.25em #ffffff;
+				box-shadow: 0px 0px 1.25em #ffffff;
 				-moz-border-radius: 0.6em;
 				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
+				border-radius: 0.4em;
 			}
 
 			.ie6 #status {
@@ -24,10 +24,11 @@
 			}
 
 			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
+				font-size: 1em;
+				list-style-type: circle;
 				margin-bottom: 0.6em;
-				padding: 0;
+				margin-right: 0.5em;
+				padding: 0.1em;;
 			}
 
 			#status li {
@@ -38,10 +39,18 @@
 				text-transform: uppercase;
 				font-size: 1.1em;
 				margin: 0 0 0.3em;
+				color:  rgb(188,71,0);
 			}
 
 			#page-body {
 				margin: 2em 1em 1.25em 18em;
+			}
+
+			h1 {
+				text-transform: uppercase;
+				font-size: 1.5em;
+				margin: 0 0 0.3em;
+				color:  rgb(188,71,0)
 			}
 
 			h2 {
@@ -91,9 +100,8 @@
 			</ul>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Campo chico - Stocks</h1>
-			<p>Bienvenido</p>
-
+			<h2>Bienvenido</h2>
+			<p>Gracias por utilizar CAMPO CHICO, sistema de control de stocks.</p>
 			<div id="controller-list" role="navigation">
 				<h2>Entidades disponibles:</h2>
 				<ul>
