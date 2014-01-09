@@ -10,8 +10,7 @@ class Producto {
 
 	static constraints = {
 		nombre  (blank:false)
-		fechaVencimiento (unique:false)
-		tipoProducto (unique:true) 
+		//TODO: Fecha de vencimiento mayor a la actual. Tipo producto y tamaños validos.
 	}
 
 	/**

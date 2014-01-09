@@ -1,9 +1,8 @@
-package seminariotp
+package seminarioTp.productos
 
 
 
 import static org.springframework.http.HttpStatus.*
-import seminarioTp.productos.TipoProducto;
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)

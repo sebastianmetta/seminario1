@@ -1,14 +1,13 @@
-package seminariotp
+package seminarioTp.productos
 
 
 
 import static org.springframework.http.HttpStatus.*
-import seminarioTp.productos.Producto
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class ProductoController {
-	
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {

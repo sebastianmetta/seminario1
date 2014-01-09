@@ -1,5 +1,5 @@
 
-<%@ page import="seminariotp.Producto" %>
+<%@ page import="seminarioTp.productos.Producto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,7 +28,11 @@
 					
 						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'producto.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
 					
-						<th><g:message code="producto.tipo.label" default="Tipo" /></th>
+						<th><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></th>
+					
+						<th><g:message code="producto.estado.label" default="Estado" /></th>
+					
+						<th><g:message code="producto.tamanio.label" default="Tamanio" /></th>
 					
 					</tr>
 				</thead>
@@ -40,7 +44,11 @@
 					
 						<td><g:formatDate date="${productoInstance.fechaVencimiento}" /></td>
 					
-						<td>${fieldValue(bean: productoInstance, field: "tipo")}</td>
+						<td>${fieldValue(bean: productoInstance, field: "tipoProducto")}</td>
+					
+						<td>${fieldValue(bean: productoInstance, field: "estado")}</td>
+					
+						<td>${fieldValue(bean: productoInstance, field: "tamanio")}</td>
 					
 					</tr>
 				</g:each>

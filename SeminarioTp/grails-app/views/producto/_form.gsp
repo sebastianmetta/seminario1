@@ -1,4 +1,4 @@
-<%@ page import="seminariotp.Producto" %>
+<%@ page import="seminarioTp.productos.Producto" %>
 
 
 
@@ -18,11 +18,27 @@
 	<g:datePicker name="fechaVencimiento" precision="day"  value="${productoInstance?.fechaVencimiento}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'tipo', 'error')} required">
-	<label for="tipo">
-		<g:message code="producto.tipo.label" default="Tipo" />
+<div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'tipoProducto', 'error')} required">
+	<label for="tipoProducto">
+		<g:message code="producto.tipoProducto.label" default="Tipo Producto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="tipo" name="tipo.id" from="${seminariotp.TipoProducto.list()}" optionKey="id" required="" value="${productoInstance?.tipo?.id}" class="many-to-one"/>
+	<g:select id="tipoProducto" name="tipoProducto.id" from="${seminarioTp.productos.TipoProducto.list()}" optionKey="id" required="" value="${productoInstance?.tipoProducto?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'estado', 'error')} required">
+	<label for="estado">
+		<g:message code="producto.estado.label" default="Estado" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="estado" name="estado.id" from="${seminarioTp.productos.EstadoProducto.list()}" optionKey="id" required="" value="${productoInstance?.estado?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'tamanio', 'error')} required">
+	<label for="tamanio">
+		<g:message code="producto.tamanio.label" default="Tamanio" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="tamanio" name="tamanio.id" from="${seminarioTp.productos.Tamanio.list()}" optionKey="id" required="" value="${productoInstance?.tamanio?.id}" class="many-to-one"/>
 </div>
 

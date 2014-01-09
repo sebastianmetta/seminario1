@@ -1,6 +1,14 @@
-<%@ page import="seminariotp.TipoProducto" %>
+<%@ page import="seminarioTp.productos.TipoProducto" %>
 
 
+
+<div class="fieldcontain ${hasErrors(bean: tipoProductoInstance, field: 'nombre', 'error')} required">
+	<label for="nombre">
+		<g:message code="tipoProducto.nombre.label" default="Nombre" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="nombre" required="" value="${tipoProductoInstance?.nombre}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: tipoProductoInstance, field: 'descripcion', 'error')} ">
 	<label for="descripcion">
@@ -8,13 +16,5 @@
 		
 	</label>
 	<g:textField name="descripcion" value="${tipoProductoInstance?.descripcion}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: tipoProductoInstance, field: 'nombre', 'error')} ">
-	<label for="nombre">
-		<g:message code="tipoProducto.nombre.label" default="Nombre" />
-		
-	</label>
-	<g:textField name="nombre" value="${tipoProductoInstance?.nombre}"/>
 </div>
 

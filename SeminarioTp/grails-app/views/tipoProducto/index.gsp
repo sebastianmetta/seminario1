@@ -1,5 +1,5 @@
 
-<%@ page import="seminariotp.TipoProducto" %>
+<%@ page import="seminarioTp.productos.TipoProducto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,9 +24,9 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="descripcion" title="${message(code: 'tipoProducto.descripcion.label', default: 'Descripcion')}" />
-					
 						<g:sortableColumn property="nombre" title="${message(code: 'tipoProducto.nombre.label', default: 'Nombre')}" />
+					
+						<g:sortableColumn property="descripcion" title="${message(code: 'tipoProducto.descripcion.label', default: 'Descripcion')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +34,9 @@
 				<g:each in="${tipoProductoInstanceList}" status="i" var="tipoProductoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${tipoProductoInstance.id}">${fieldValue(bean: tipoProductoInstance, field: "descripcion")}</g:link></td>
+						<td><g:link action="show" id="${tipoProductoInstance.id}">${fieldValue(bean: tipoProductoInstance, field: "nombre")}</g:link></td>
 					
-						<td>${fieldValue(bean: tipoProductoInstance, field: "nombre")}</td>
+						<td>${fieldValue(bean: tipoProductoInstance, field: "descripcion")}</td>
 					
 					</tr>
 				</g:each>

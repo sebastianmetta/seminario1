@@ -1,5 +1,5 @@
 
-<%@ page import="seminariotp.TipoProducto" %>
+<%@ page import="seminarioTp.productos.TipoProducto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list tipoProducto">
 			
-				<g:if test="${tipoProductoInstance?.descripcion}">
-				<li class="fieldcontain">
-					<span id="descripcion-label" class="property-label"><g:message code="tipoProducto.descripcion.label" default="Descripcion" /></span>
-					
-						<span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${tipoProductoInstance}" field="descripcion"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${tipoProductoInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="tipoProducto.nombre.label" default="Nombre" /></span>
 					
 						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${tipoProductoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${tipoProductoInstance?.descripcion}">
+				<li class="fieldcontain">
+					<span id="descripcion-label" class="property-label"><g:message code="tipoProducto.descripcion.label" default="Descripcion" /></span>
+					
+						<span class="property-value" aria-labelledby="descripcion-label"><g:fieldValue bean="${tipoProductoInstance}" field="descripcion"/></span>
 					
 				</li>
 				</g:if>

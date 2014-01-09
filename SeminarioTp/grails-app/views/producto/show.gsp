@@ -1,5 +1,5 @@
 
-<%@ page import="seminariotp.Producto" %>
+<%@ page import="seminarioTp.productos.Producto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,11 +41,29 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${productoInstance?.tipo}">
+				<g:if test="${productoInstance?.tipoProducto}">
 				<li class="fieldcontain">
-					<span id="tipo-label" class="property-label"><g:message code="producto.tipo.label" default="Tipo" /></span>
+					<span id="tipoProducto-label" class="property-label"><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></span>
 					
-						<span class="property-value" aria-labelledby="tipo-label"><g:link controller="tipoProducto" action="show" id="${productoInstance?.tipo?.id}">${productoInstance?.tipo?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tipoProducto-label"><g:link controller="tipoProducto" action="show" id="${productoInstance?.tipoProducto?.id}">${productoInstance?.tipoProducto?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productoInstance?.estado}">
+				<li class="fieldcontain">
+					<span id="estado-label" class="property-label"><g:message code="producto.estado.label" default="Estado" /></span>
+					
+						<span class="property-value" aria-labelledby="estado-label"><g:link controller="estadoProducto" action="show" id="${productoInstance?.estado?.id}">${productoInstance?.estado?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productoInstance?.tamanio}">
+				<li class="fieldcontain">
+					<span id="tamanio-label" class="property-label"><g:message code="producto.tamanio.label" default="Tamanio" /></span>
+					
+						<span class="property-value" aria-labelledby="tamanio-label"><g:link controller="tamanio" action="show" id="${productoInstance?.tamanio?.id}">${productoInstance?.tamanio?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
