@@ -1,6 +1,6 @@
 package almacenes
 
-import seminarioTp.productos.Producto;
+import productos.Producto;
 
 class MovimientoAlmacen {
 

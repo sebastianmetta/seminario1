@@ -3,6 +3,7 @@ package seminarioTp.productos
 
 
 import static org.springframework.http.HttpStatus.*
+import productos.EstadoProducto;
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)

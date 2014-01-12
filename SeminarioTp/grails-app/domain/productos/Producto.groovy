@@ -1,4 +1,5 @@
-package seminarioTp.productos
+package productos
+
 
 class Producto {
 
