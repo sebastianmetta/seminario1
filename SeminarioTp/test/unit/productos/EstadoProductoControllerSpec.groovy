@@ -1,15 +1,13 @@
-package seminarioTp.productos
+package productos
 
 
 
-import productos.Producto;
-import productos.ProductoController;
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(ProductoController)
-@Mock(Producto)
-class ProductoControllerSpec extends Specification {
+@TestFor(EstadoProductoController)
+@Mock(EstadoProducto)
+class EstadoProductoControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -23,8 +21,8 @@ class ProductoControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.productoInstanceList
-            model.productoInstanceCount == 0
+            !model.estadoProductoInstanceList
+            model.estadoProductoInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -32,31 +30,31 @@ class ProductoControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.productoInstance!= null
+            model.estadoProductoInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
-            def producto = new Producto()
-            producto.validate()
-            controller.save(producto)
+            def estadoProducto = new EstadoProducto()
+            estadoProducto.validate()
+            controller.save(estadoProducto)
 
         then:"The create view is rendered again with the correct model"
-            model.productoInstance!= null
+            model.estadoProductoInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            producto = new Producto(params)
+            estadoProducto = new EstadoProducto(params)
 
-            controller.save(producto)
+            controller.save(estadoProducto)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/producto/show/1'
+            response.redirectedUrl == '/estadoProducto/show/1'
             controller.flash.message != null
-            Producto.count() == 1
+            EstadoProducto.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -68,11 +66,11 @@ class ProductoControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def producto = new Producto(params)
-            controller.show(producto)
+            def estadoProducto = new EstadoProducto(params)
+            controller.show(estadoProducto)
 
         then:"A model is populated containing the domain instance"
-            model.productoInstance == producto
+            model.estadoProductoInstance == estadoProducto
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -84,11 +82,11 @@ class ProductoControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def producto = new Producto(params)
-            controller.edit(producto)
+            def estadoProducto = new EstadoProducto(params)
+            controller.edit(estadoProducto)
 
         then:"A model is populated containing the domain instance"
-            model.productoInstance == producto
+            model.estadoProductoInstance == estadoProducto
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -100,22 +98,22 @@ class ProductoControllerSpec extends Specification {
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def producto = new Producto()
-            producto.validate()
-            controller.update(producto)
+            def estadoProducto = new EstadoProducto()
+            estadoProducto.validate()
+            controller.update(estadoProducto)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.productoInstance == producto
+            model.estadoProductoInstance == estadoProducto
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            producto = new Producto(params).save(flush: true)
-            controller.update(producto)
+            estadoProducto = new EstadoProducto(params).save(flush: true)
+            controller.update(estadoProducto)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/producto/show/$producto.id"
+            response.redirectedUrl == "/estadoProducto/show/$estadoProducto.id"
             flash.message != null
     }
 
@@ -129,17 +127,17 @@ class ProductoControllerSpec extends Specification {
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def producto = new Producto(params).save(flush: true)
+            def estadoProducto = new EstadoProducto(params).save(flush: true)
 
         then:"It exists"
-            Producto.count() == 1
+            EstadoProducto.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(producto)
+            controller.delete(estadoProducto)
 
         then:"The instance is deleted"
-            Producto.count() == 0
-            response.redirectedUrl == '/producto/index'
+            EstadoProducto.count() == 0
+            response.redirectedUrl == '/estadoProducto/index'
             flash.message != null
     }
 }

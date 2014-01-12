@@ -9,4 +9,8 @@ class CausaMovimiento {
 		descripcion blank:false
 		tipoMovimiento nullable:false 
     }
+	
+	String toString() {
+		return this.descripcion + "(" + this.tipoMovimiento.toString() + ")" 
+	}
 }

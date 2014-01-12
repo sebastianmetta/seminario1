@@ -30,4 +30,8 @@ class Producto {
 	Boolean estaVencido() {
 		estaVencido(new Date())
 	}
+	
+	String toString() {
+		return this.getNombre()
+	}
 }

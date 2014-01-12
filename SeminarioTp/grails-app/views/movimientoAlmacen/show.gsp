@@ -41,6 +41,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${movimientoAlmacenInstance?.productos}">
+				<li class="fieldcontain">
+					<span id="productos-label" class="property-label"><g:message code="movimientoAlmacen.productos.label" default="Productos" /></span>
+					
+						<g:each in="${movimientoAlmacenInstance.productos}" var="p">
+						<span class="property-value" aria-labelledby="productos-label"><g:link controller="producto" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:movimientoAlmacenInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

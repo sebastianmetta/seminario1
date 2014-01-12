@@ -9,4 +9,8 @@ class TipoProducto {
 		nombre (blank:false) 
 		descripcion () 
     }
+	
+	String toString() {
+		return this.getNombre()
+	}
 }

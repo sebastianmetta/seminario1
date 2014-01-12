@@ -1,5 +1,5 @@
 
-<%@ page import="seminarioTp.productos.EstadoProducto" %>
+<%@ page import="productos.EstadoProducto" %>
 <!DOCTYPE html>
 <html>
 	<head>

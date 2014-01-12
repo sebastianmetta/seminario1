@@ -1,4 +1,4 @@
-<%@ page import="seminarioTp.productos.EstadoProducto" %>
+<%@ page import="productos.EstadoProducto" %>
 
 
 

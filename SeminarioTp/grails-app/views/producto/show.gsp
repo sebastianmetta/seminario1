@@ -1,5 +1,5 @@
 
-<%@ page import="seminarioTp.productos.Producto" %>
+<%@ page import="productos.Producto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,24 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${productoInstance?.fechaVencimiento}">
-				<li class="fieldcontain">
-					<span id="fechaVencimiento-label" class="property-label"><g:message code="producto.fechaVencimiento.label" default="Fecha Vencimiento" /></span>
-					
-						<span class="property-value" aria-labelledby="fechaVencimiento-label"><g:formatDate date="${productoInstance?.fechaVencimiento}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${productoInstance?.tipoProducto}">
-				<li class="fieldcontain">
-					<span id="tipoProducto-label" class="property-label"><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></span>
-					
-						<span class="property-value" aria-labelledby="tipoProducto-label"><g:link controller="tipoProducto" action="show" id="${productoInstance?.tipoProducto?.id}">${productoInstance?.tipoProducto?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${productoInstance?.estado}">
 				<li class="fieldcontain">
 					<span id="estado-label" class="property-label"><g:message code="producto.estado.label" default="Estado" /></span>
@@ -59,11 +41,29 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${productoInstance?.fechaVencimiento}">
+				<li class="fieldcontain">
+					<span id="fechaVencimiento-label" class="property-label"><g:message code="producto.fechaVencimiento.label" default="Fecha Vencimiento" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaVencimiento-label"><g:formatDate date="${productoInstance?.fechaVencimiento}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${productoInstance?.tamanio}">
 				<li class="fieldcontain">
 					<span id="tamanio-label" class="property-label"><g:message code="producto.tamanio.label" default="Tamanio" /></span>
 					
 						<span class="property-value" aria-labelledby="tamanio-label"><g:link controller="tamanio" action="show" id="${productoInstance?.tamanio?.id}">${productoInstance?.tamanio?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${productoInstance?.tipoProducto}">
+				<li class="fieldcontain">
+					<span id="tipoProducto-label" class="property-label"><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></span>
+					
+						<span class="property-value" aria-labelledby="tipoProducto-label"><g:link controller="tipoProducto" action="show" id="${productoInstance?.tipoProducto?.id}">${productoInstance?.tipoProducto?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

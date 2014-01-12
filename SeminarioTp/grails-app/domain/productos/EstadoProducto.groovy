@@ -7,4 +7,8 @@ class EstadoProducto {
     static constraints = {
 		descripcion blank:false 
     }
+	
+	String toString() {
+		return this.getDescripcion()
+	}
 }

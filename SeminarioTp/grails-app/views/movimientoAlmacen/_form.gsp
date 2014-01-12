@@ -18,3 +18,11 @@
 	<g:datePicker name="fecha" precision="day"  value="${movimientoAlmacenInstance?.fecha}"  />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: movimientoAlmacenInstance, field: 'productos', 'error')} ">
+	<label for="productos">
+		<g:message code="movimientoAlmacen.productos.label" default="Productos" />
+		
+	</label>
+	<g:select name="productos" from="${productos.Producto.list()}" multiple="multiple" optionKey="id" size="5" value="${movimientoAlmacenInstance?.productos*.id}" class="many-to-many"/>
+</div>
+

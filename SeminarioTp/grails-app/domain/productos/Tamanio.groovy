@@ -28,4 +28,7 @@ class Tamanio implements Comparable<Tamanio> {
 		return 0;
 	}
 	
+	String toString() {
+		return this.getAncho().toString().concat(" x ").concat(this.getAlto().toString())
+	}
 }

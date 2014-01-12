@@ -1,5 +1,5 @@
 
-<%@ page import="seminarioTp.productos.Producto" %>
+<%@ page import="productos.Producto" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,13 +26,13 @@
 					
 						<g:sortableColumn property="nombre" title="${message(code: 'producto.nombre.label', default: 'Nombre')}" />
 					
-						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'producto.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
-					
-						<th><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></th>
-					
 						<th><g:message code="producto.estado.label" default="Estado" /></th>
 					
+						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'producto.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
+					
 						<th><g:message code="producto.tamanio.label" default="Tamanio" /></th>
+					
+						<th><g:message code="producto.tipoProducto.label" default="Tipo Producto" /></th>
 					
 					</tr>
 				</thead>
@@ -42,13 +42,13 @@
 					
 						<td><g:link action="show" id="${productoInstance.id}">${fieldValue(bean: productoInstance, field: "nombre")}</g:link></td>
 					
-						<td><g:formatDate date="${productoInstance.fechaVencimiento}" /></td>
-					
-						<td>${fieldValue(bean: productoInstance, field: "tipoProducto")}</td>
-					
 						<td>${fieldValue(bean: productoInstance, field: "estado")}</td>
 					
+						<td><g:formatDate date="${productoInstance.fechaVencimiento}" /></td>
+					
 						<td>${fieldValue(bean: productoInstance, field: "tamanio")}</td>
+					
+						<td>${fieldValue(bean: productoInstance, field: "tipoProducto")}</td>
 					
 					</tr>
 				</g:each>

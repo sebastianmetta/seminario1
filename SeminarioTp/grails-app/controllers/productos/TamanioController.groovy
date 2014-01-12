@@ -3,7 +3,6 @@ package productos
 
 
 import static org.springframework.http.HttpStatus.*
-import productos.Tamanio;
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
