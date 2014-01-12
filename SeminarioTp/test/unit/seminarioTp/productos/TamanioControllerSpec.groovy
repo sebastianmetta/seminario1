@@ -3,6 +3,7 @@ package seminarioTp.productos
 
 
 import productos.Tamanio;
+import productos.TamanioController;
 import grails.test.mixin.*
 import spock.lang.*
 
