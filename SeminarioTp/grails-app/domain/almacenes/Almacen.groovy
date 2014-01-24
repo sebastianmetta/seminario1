@@ -1,5 +1,7 @@
 package almacenes
 
+import java.util.logging.Logger;
+
 import productos.Producto;
 import productos.Tamanio;
 import productos.TipoProducto;

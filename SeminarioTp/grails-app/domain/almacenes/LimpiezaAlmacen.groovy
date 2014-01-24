@@ -12,7 +12,7 @@ class LimpiezaAlmacen {
     static constraints = {
 		fecha blank:false 
 		encargado blank:false
-		observaciones blank:true 
+		observaciones blank:true, nullable:true 
     }
 	
 	
