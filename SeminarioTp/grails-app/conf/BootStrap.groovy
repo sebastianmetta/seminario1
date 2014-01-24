@@ -1,3 +1,4 @@
+import infraestructura.Operario;
 import almacenes.CausaMovimiento;
 import almacenes.DireccionMovimiento;
 import almacenes.TipoMovimiento;
@@ -28,14 +29,20 @@ class BootStrap {
 			new EstadoProducto(descripcion: "Vencido").save()
 		}
 
-		TipoMovimiento entrada = new TipoMovimiento(descripcion: "Entrada", direccion: DireccionMovimiento.ADENTRO).save()
-		TipoMovimiento salida = new TipoMovimiento(descripcion: "Salida", direccion: DireccionMovimiento.AFUERA).save()
+		if (!TipoMovimiento.count() && !CausaMovimiento.count()) {
+			TipoMovimiento entrada = new TipoMovimiento(descripcion: "Entrada", direccion: DireccionMovimiento.ADENTRO).save()
+			TipoMovimiento salida = new TipoMovimiento(descripcion: "Salida", direccion: DireccionMovimiento.AFUERA).save()
 	
-		new CausaMovimiento(descripcion: "Venta a cliente", tipoMovimiento: salida).save()
-		new CausaMovimiento(descripcion: "Compra a proveedor", tipoMovimiento: entrada).save()
-		new CausaMovimiento(descripcion: "Vencimiento de producto", tipoMovimiento: salida).save()
-		new CausaMovimiento(descripcion: "Rotura de producto", tipoMovimiento: salida).save()
+			new CausaMovimiento(descripcion: "Venta a cliente", tipoMovimiento: salida).save()
+			new CausaMovimiento(descripcion: "Compra a proveedor", tipoMovimiento: entrada).save()
+			new CausaMovimiento(descripcion: "Vencimiento de producto", tipoMovimiento: salida).save()
+			new CausaMovimiento(descripcion: "Rotura de producto", tipoMovimiento: salida).save()
+		}
 
+		if (!Operario.count()) {
+			new Operario(nombre: "Operario Raul", fechaDeNacimiento: new Date('10/30/1984')).save()
+		}
+		
     }
     def destroy = {
     }

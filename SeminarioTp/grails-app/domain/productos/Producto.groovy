@@ -20,7 +20,7 @@ class Producto {
 	 * @return <code>true</code> si está vencido. <code>false</code> de lo contrario.
 	 */
 	Boolean estaVencido(Date compararContra) {
-		return (fechaVencimiento.compareTo(compararContra)>0);
+		return (this.getFechaVencimiento().compareTo(compararContra)>0);
 	}
 		
 	/**

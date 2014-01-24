@@ -24,9 +24,11 @@
 			<thead>
 					<tr>
 					
-						<th><g:message code="movimientoAlmacen.causa.label" default="Causa" /></th>
+						<th><g:message code="movimientoAlmacen.almacen.label" default="Almacen" /></th>
 					
 						<g:sortableColumn property="fecha" title="${message(code: 'movimientoAlmacen.fecha.label', default: 'Fecha')}" />
+					
+						<th><g:message code="movimientoAlmacen.causa.label" default="Causa" /></th>
 					
 					</tr>
 				</thead>
@@ -34,9 +36,11 @@
 				<g:each in="${movimientoAlmacenInstanceList}" status="i" var="movimientoAlmacenInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${movimientoAlmacenInstance.id}">${fieldValue(bean: movimientoAlmacenInstance, field: "causa")}</g:link></td>
+						<td><g:link action="show" id="${movimientoAlmacenInstance.id}">${fieldValue(bean: movimientoAlmacenInstance, field: "almacen")}</g:link></td>
 					
 						<td><g:formatDate date="${movimientoAlmacenInstance.fecha}" /></td>
+					
+						<td>${fieldValue(bean: movimientoAlmacenInstance, field: "causa")}</td>
 					
 					</tr>
 				</g:each>

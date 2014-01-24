@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list movimientoAlmacen">
 			
-				<g:if test="${movimientoAlmacenInstance?.causa}">
+				<g:if test="${movimientoAlmacenInstance?.almacen}">
 				<li class="fieldcontain">
-					<span id="causa-label" class="property-label"><g:message code="movimientoAlmacen.causa.label" default="Causa" /></span>
+					<span id="almacen-label" class="property-label"><g:message code="movimientoAlmacen.almacen.label" default="Almacen" /></span>
 					
-						<span class="property-value" aria-labelledby="causa-label"><g:link controller="causaMovimiento" action="show" id="${movimientoAlmacenInstance?.causa?.id}">${movimientoAlmacenInstance?.causa?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="almacen-label"><g:link controller="almacen" action="show" id="${movimientoAlmacenInstance?.almacen?.id}">${movimientoAlmacenInstance?.almacen?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -37,6 +37,15 @@
 					<span id="fecha-label" class="property-label"><g:message code="movimientoAlmacen.fecha.label" default="Fecha" /></span>
 					
 						<span class="property-value" aria-labelledby="fecha-label"><g:formatDate date="${movimientoAlmacenInstance?.fecha}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${movimientoAlmacenInstance?.causa}">
+				<li class="fieldcontain">
+					<span id="causa-label" class="property-label"><g:message code="movimientoAlmacen.causa.label" default="Causa" /></span>
+					
+						<span class="property-value" aria-labelledby="causa-label"><g:link controller="causaMovimiento" action="show" id="${movimientoAlmacenInstance?.causa?.id}">${movimientoAlmacenInstance?.causa?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
