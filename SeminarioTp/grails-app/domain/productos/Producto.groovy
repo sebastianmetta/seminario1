@@ -1,7 +1,5 @@
 package productos
 
-import groovy.time.TimeCategory
-
 class Producto {
 
 	String nombre
