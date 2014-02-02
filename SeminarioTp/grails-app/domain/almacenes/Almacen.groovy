@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import productos.Producto;
 import productos.Tamanio;
 import productos.TipoProducto;
+import seminariotp.PropertiesService;
 
 class Almacen {
 
@@ -27,6 +28,9 @@ class Almacen {
 	static mapping = {
 		sort nombre:"asc"
 	}
+	
+	def config = new ConfigSlurper().parse(new File('grails-app/conf/CampoChico.groovy').toURL())
+	
 	
 	/**
 	 * Efectua una operación que modifica el stock sobre este almacen.
@@ -63,12 +67,32 @@ class Almacen {
 		}
 	}
 	
+	private Date getFechaUltimaLimpieza() {
+		//TODO: Revisar.
+		LimpiezaAlmacen ultimaLimpieza = this.getLimpiezasRealizadas().sort { it.getFecha() }.first()
+		return ultimaLimpieza.getFecha()
+	}
+	
+	
+	
 	/**
 	 * Devuelve <code>true</code> si éste almacen necesita limpiarse.
 	 * @return
 	 */
 	Boolean debeLimpiarse() {
 		
+		use(groovy.time.TimeCategory) {
+			
+			def hoy = new Date()
+			def duracion =  hoy - this.getFechaUltimaLimpieza()
+			def diasSinLimpiar = "${duration.days}"
+			if (diasSinLimpiar > config.almacenes.frecuenciaLimpieza) {
+				return true
+			}
+			else {
+				return false
+			}
+		}
 	}
 	
 	/**
